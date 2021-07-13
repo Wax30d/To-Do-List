@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'base/main.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DELETE</title>
+</head>
+<body>
+
+    {% block content %}
+
+        <div class="header-bar">
+            <a href="{% url 'tasks' %}">&#8592; Back</a>
+        </div>
+
+        <div class="card-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <p>Do you want to delete?! '{{ task }}'</p>
+                <input class="button" type="submit" value="Delete">
+            </form>
+        </div>
+
+    {% endblock content %}
+
+</body>
+</html>

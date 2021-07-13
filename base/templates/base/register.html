@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base/main.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+</head>
+<body>
+
+    {% block content %}
+
+        <div class="header-bar">
+            <h1>Register</h1>
+        </div>
+
+        <div class="card-body">
+            <form action="" method="POST">
+
+              {% csrf_token %}
+                <label for="">{{form.username.label}}</label>
+                {{form.username}}
+
+                <label for="">{{form.password1.label}}</label>
+                {{form.password1}}
+
+                <label for="">{{form.password2.label}}</label>
+                {{form.password2}}
+
+            </form>
+
+            <input style="margin-top: 10px;" class="button" type="submit" value="Register">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+
+    {% endblock content %}
+
+</body>
+</html>
